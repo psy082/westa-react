@@ -1,0 +1,81 @@
+@import "../../../../../styles/common.scss";
+@import "../../../styles/base.scss";
+@import "../ThumbnailImage/ThumbnailImage.scss";
+
+.storybar_slider_wrap {
+  margin-top: 0;
+  margin-bottom: 24px;
+  padding: 14px 0;
+  background: $white;
+  border: 1px solid $border-grey;
+  border-radius: 3px;
+
+  .storybar_slider_view {
+    position: relative;
+    height: 90px;
+    outline: none;
+    overflow: hidden;
+
+    .storybar_slider_lists {
+      height: 100%;
+      width: calc(9 * 80px);
+      display: flex;
+
+      .user_story {
+        height: 122px;
+        width: 80px;
+        margin-top: 2px;
+
+        &:first-child {
+          margin-left: 10px;
+        }
+
+        &:last-child {
+          margin-right: 10px;
+        }
+
+        button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 80px;
+          padding-top: 0;
+          padding-bottom: 0;
+          outline: none;
+          background: transparent;
+          border: 0;
+
+          .thumbnail_image_container {
+            @include ThumbnailImage(54);
+          }
+
+          .nickname {
+            color: rgb(38, 38, 38);
+            font-size: 12px;
+            line-height: 14px;
+            overflow: hidden;
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    .left_button {
+      @include leftButton(30%, 1);
+
+      .button_image {
+        @include leftButtonImage();
+      }
+    }
+
+    .right_button {
+      @include rightButton(30%, 1);
+
+      .button_image {
+        @include rightButtonImage();
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "../../../../../styles/common.scss";
+@import "../../../styles/base.scss";
+
+@mixin ThumbnailImage($size, $border: true) {
+  @if ($border) {
+    box-sizing: border-box;
+    @include center;
+    height: #{$size + 8}px;
+    width: #{$size + 8}px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: 2px solid rgb(255, 104, 217);
+    border-radius: 50%;
+
+    a {
+      height: #{$size}px;
+
+      img {
+        height: #{$size}px;
+        width: #{$size}px;
+        border-radius: 50%;
+      }
+    }
+  } @else {
+    img {
+      height: #{$size}px;
+      width: #{$size}px;
+      border-radius: 50%;
+    }
+  }
+}

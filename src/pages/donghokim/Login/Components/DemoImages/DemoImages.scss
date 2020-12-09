@@ -1,0 +1,25 @@
+.demo_container {
+  flex-basis: 454px;
+  height: 618px;
+  margin-right: -15px;
+  margin-left: -35px;
+  background-position: 0 0;
+  background-size: 454px 618px;
+  background-image: url("https://instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png");
+  background-repeat: no-repeat;
+
+  .image_frame {
+    position: relative;
+    margin-top: 99px;
+    margin-left: 151px;
+
+    .demo_image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 427px;
+      width: 240px;
+      opacity: 1;
+    }
+  }
+}

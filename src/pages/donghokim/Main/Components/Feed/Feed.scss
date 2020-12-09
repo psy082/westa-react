@@ -1,0 +1,230 @@
+@import "../../../../../styles/common.scss";
+@import "../../../styles/base.scss";
+@import "../ThumbnailImage/ThumbnailImage.scss";
+
+.feed {
+  article {
+    position: relative;
+    margin-bottom: 60px;
+    padding: 0;
+    background: $white;
+    border: 1px solid $border-grey;
+    border-radius: 3px;
+
+    header {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      padding-left: 11px;
+      padding-right: 11px;
+
+      .thumbnail_image_container {
+        @include ThumbnailImage(32);
+      }
+
+      .user_info_container {
+        display: flex;
+        height: 40px;
+        margin-left: 12px;
+        flex-direction: column;
+        justify-content: center;
+
+        .author {
+          color: rgb(38, 38, 38);
+
+          .author_link {
+            font-weight: 600;
+            color: inherit;
+            border: 0;
+          }
+        }
+
+        .location {
+          font-size: 12px;
+          font-weight: 250;
+          color: inherit;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .option_button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .image_container {
+      .image_slider_view {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        .image_slider_lists {
+          display: flex;
+          height: 100%;
+          width: 200%;
+
+          .image_content {
+            width: 614px;
+
+            img {
+              width: 100%;
+            }
+          }
+        }
+
+        .left_button {
+          @include leftButton(50%, 0.5);
+
+          .button_image {
+            @include leftButtonImage();
+          }
+        }
+
+        .right_button {
+          @include rightButton(50%, 0.5);
+
+          .button_image {
+            @include rightButtonImage();
+          }
+        }
+      }
+
+      .slider_dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        .active_dot {
+          @include dot($blue);
+        }
+
+        .not_active_dot {
+          @include dot($dot-grey);
+        }
+      }
+    }
+
+    .interaction_container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: -38px;
+      padding-left: 6px;
+      padding-right: 6px;
+
+      .reactions_container {
+        display: flex;
+
+        button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 40px;
+          width: 40px;
+          padding: 4px;
+          border: 0;
+          outline: none;
+          background: transparent;
+        }
+      }
+
+      .store_button button {
+        height: 40px;
+        width: 40px;
+        padding: 4px;
+        border: 0;
+        outline: none;
+        background: transparent;
+      }
+    }
+
+    .number_of_likes {
+      margin-bottom: 8px;
+      padding-left: 15px;
+      padding-right: 8px;
+
+      button {
+        @include textButton();
+      }
+    }
+
+    .text_container {
+      .description_container {
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 3px;
+
+        button {
+          @include textButton();
+        }
+
+        .text {
+          margin-left: 8px;
+          font-size: 14px;
+        }
+      }
+    }
+
+    .time_stamp_container {
+      margin-bottom: 5px;
+      padding-left: 16px;
+      padding-right: 14px;
+
+      time {
+        font-size: 10px;
+        letter-spacing: 0.2px;
+        color: $text-grey;
+        text-transform: uppercase;
+      }
+    }
+
+    .comment_input {
+      display: flex;
+      align-items: center;
+      height: 56px;
+      padding-left: 14px;
+      padding-right: 10px;
+      border-top: 1px solid $border-grey;
+
+      form {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        textarea {
+          position: relative;
+          height: 18px;
+          width: 100%;
+          max-height: 80px;
+          padding: 0;
+          border: 0;
+          overflow: hidden;
+          outline: none;
+          resize: none;
+        }
+
+        .submit {
+          width: 40px;
+          padding: 0;
+          outline: none;
+          border: 0;
+          background: transparent;
+          font-weight: 600;
+          color: $blue;
+
+          &:disabled {
+            color: $blue;
+            opacity: 0.3;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+}
